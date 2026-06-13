@@ -32,6 +32,36 @@
 			console.log(true && false) // false
 			console.log(false && true) // false
 			console.log(false && false) // false
+
+			console.log(true || true) // true
+			console.log(true || false) // true
+			console.log(false || true) // true
+			console.log(false || false) // false
+
+			console.log(!true) // false
+
+			//truthy and falsy values, 
+			//What is !!: force to boolean, single ! inverts the value
+			console.log(!!"hello") // true
+			console.log(!!0) // false, any other number is true
+			console.log(!!null) // false
+			console.log(!!undefined) // false
+			console.log(!!NaN) // false
+
+			//ternary operator: 
+			/*
+				condition ? exprIfTrue : exprIfFalse
+			*/
+			const age = 18;
+			const canDrive = (age >= 16) ? "You can drive." : "You cannot drive.";
+			console.log(canDrive);
+
+			//guard operator
+			false && console.log("This will not be printed");
+
+			const message = false && 'hello'; // message will be false
+
+			const currency = 'EUR' || 'USD'; // when no value is assigned to currency, it will default to 'USD'
     </script>
   </body>
 </html>

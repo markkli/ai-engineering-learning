@@ -20,6 +20,75 @@
 
 			delete product.newProperty;
 			console.log(product.newProperty) // undefined
+
+			const product2 = {
+				name: 'shirt',
+				price: 1990,
+				'delivery-time': '1 day',
+				rating: {
+					stars: 4.5,
+					reviews: 10
+				},
+				fun: function functions1() {
+					console.log('this is a function')
+					console.log(this.name) // shirt
+				}
+			}
+			console.log(product2) // shirt
+			console.log(product2.price) // 1990
+			console.log(product2['name']) // dont raise error when using bracket notation
+			console.log(product2['delivery-time']) // 1 day
+			console.log(product2.rating.stars) // 4.5
+			console.log(product2.rating.reviews) // 10
+			product2.fun() // this is a function, shirt; THIS IS A METHOD
+
+			// JSON only use double quotes and no functions, 
+			// so it has less feature than javascript object but universal
+			console.log(JSON.stringify(product2))
+
+			// change JSON to JavaScript object
+			const jsonString = JSON.stringify(product2);
+			console.log(JSON.parse(jsonString));
+
+			// Autoboxing
+			console.log('hello'.length);
+			console.log('hello'.toUpperCase());
+
+			const object1 = {
+				message: 'hello'
+			};
+
+			const object2 = object1; // this is only a REFERENCE, not a copy
+
+			object1.message = 'hi';
+			console.log(object2.message); // hi
+
+			const object3 = {
+				message: 'hello'
+			};
+
+			console.log(object1 === object2) // true, they reference the same object
+			console.log(object1 === object3) // false, they reference different objects
+
+			const object4 = {
+				message: 'hello',
+				price: 1090
+			};
+			const { message, price } = object4;
+			console.log(message) // hello
+			console.log(price) // 1090
+
+			const object5 = {
+				message, // shorthand for message: message
+				method: function function1() {
+					console.log('method')
+				},
+				method() {
+					console.log('method')
+				}
+			};
+
+
     </script>
   </body>
 </html>

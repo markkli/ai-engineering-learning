@@ -72,6 +72,22 @@
 			console.log(numsDoubled)
 
 			const array1 = [1,2,3]
+			const array2 = array1.slice() // slice return a copy
+			array2.push(4)
+			console.log(array1)
+			console.log(array2);
+
+			const [firstValue, secondValue] = [1,2,3] // getting the first 2 in array
+
+			for (let i = 1; i <= 10; i++) {
+				if (i === 3) {
+					continue // 3 will be skipped
+				}
+				console.log(i);
+				if (i === 8) {
+					break; // stop a loop early
+				}
+			}
     </script>
   </body>
 </html>

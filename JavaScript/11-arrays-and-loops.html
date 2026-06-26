@@ -80,14 +80,35 @@
 			const [firstValue, secondValue] = [1,2,3] // getting the first 2 in array
 
 			for (let i = 1; i <= 10; i++) {
-				if (i === 3) {
-					continue // 3 will be skipped
+				if (i % 3 === 3) {
+					continue // number divisible by 3 will be skipped
 				}
 				console.log(i);
 				if (i === 8) {
 					break; // stop a loop early
 				}
 			}
+
+			while (i <= 10) {
+				if (i % 3 === 0) {
+					i++
+					continue; // this is not okay because ++ skipped so must put i++ also in the if statement
+				}
+				console.log(i)
+				i++
+			}
+
+			function doubleArray(nums) {
+				const numsDobled = []
+				
+				for (let i = 0; i < nums.length; i++) {
+					const num = nums[i]
+					numsDoubled.push(nums * 2)
+				}
+				console.log(numsDoubled)
+			}
+
+			doubleArray([1,2,1])
     </script>
   </body>
 </html>
